@@ -1,0 +1,309 @@
+@import url('https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap');
+
+:root {
+    --bg: #fff;
+    --accent-color: #35261c;
+    --font: #333333;
+    --font-faded: hsl(from var(--font) h s calc(l + 25));
+
+    --second: #2eb7ee;
+
+    --base-padding: 1rem;
+}
+
+h6 {
+    font-size: 0.85rem;
+}
+
+h5 {
+    font-size: 1rem;
+}
+
+h4 {
+    font-size: 1.25rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+}
+
+h2 {
+    font-size: 1.75rem;
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+p {
+    font-size: 0.85rem;
+}
+
+small {
+    color: var(--font-faded);
+    display: block;
+
+    &.category {
+        margin-top: 0.6rem;
+        margin-bottom: 0.4rem;
+    }
+}
+
+* {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+body {
+    color: var(--font);
+    overflow-x: hidden;
+}
+
+.title {
+    font-family: "Kaushan Script", cursive;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 2.5rem;
+}
+
+.font {
+    font-family: "Kaushan Script", cursive;
+    font-weight: 700;
+    font-style: normal;
+    letter-spacing: 0.1rem;
+
+    * {
+        font-family: inherit;
+        font-weight: inherit;
+        font-style: inherit;
+        letter-spacing: inherit;
+    }
+}
+
+.logo {
+    width: fit-content;
+    height: fit-content;
+    background-color: var(--bg);
+    border-radius: 50%;
+
+    img {
+        width: 5rem;
+    }
+}
+
+.menu {
+    width: 100%;
+    padding: 0.4rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    background-color: hsl(from var(--accent-color) h s l / 0.7);
+    backdrop-filter: blur(2px);
+    color: var(--bg);
+
+    position: fixed;
+    top: 0;
+    z-index: 1;
+}
+
+.food-bg {
+    background-image: url("./imgs/food_background.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: left;
+    width: 100%;
+    height: 100vh;
+    position: relative;
+
+    article {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        translate: 0 -50%;
+
+        width: max-content;
+        color: var(--bg);
+
+        h3 {
+            display: flex;
+            justify-content: space-between;
+        }
+    }
+}
+
+.btn {
+    background-color: hsl(from var(--accent-color) h s 90);
+    color: var(--accent-color);
+    border: 0.1rem solid var(--accent-color);
+    padding: calc(var(--base-padding) / 3) calc(var(--base-padding) / 1.5);
+    font-weight: 700;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    width: fit-content;
+    font-size: 0.85rem;
+}
+
+main {
+    max-width: 1400px;
+    width: 100%;
+    margin: auto;
+    padding: var(--base-padding);
+}
+
+.options {
+    max-width: 1000px;
+    width: 100%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+    overflow-y: hidden;
+    overflow-x: auto;
+    padding-bottom: calc(var(--base-padding) / 2);
+
+    &::-webkit-scrollbar {
+        height: 0.5rem;
+    }
+
+    &::-webkit-scrollbar-track {
+        background-color: hsl(from var(--font) h s 90);
+        border-radius: 0.2rem;
+    }
+    
+    &::-webkit-scrollbar-thumb {
+        background-color: var(--font-faded);
+        border-radius: 0.2rem;
+    }
+
+    .option {
+        white-space: nowrap;
+        word-break: keep-all;
+        width: max-content;
+        padding: 0.2rem 0.4rem;
+        border: 0.1rem solid var(--font-faded);
+        color: var(--font-faded);
+        border-radius: 0.6rem;
+
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+
+        cursor: pointer;
+
+        &.checked {
+            background-color: hsl(from var(--accent-color) h s 90);
+            color: var(--accent-color);
+            border: 0.1rem solid var(--accent-color);
+        }
+    }
+}
+
+.items-list {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.4rem;
+
+    .card {
+        box-shadow: 0 0 0.5rem -0.1rem var(--font-faded);
+        overflow: hidden;
+        height: max-content;
+        border-radius: 0.3rem;
+        padding: var(--base-padding);
+
+        .additional-info {
+            margin-top: 0.7rem;
+        }
+
+        .price {
+            display: flex;
+            align-items: end;
+            gap: 0.8rem;
+            border-top: 0.1rem solid var(--font-faded);
+
+            table {
+                flex-grow: 1;
+                border-collapse: collapse;
+
+                th, td {
+                    padding: 0.2rem 0.4rem;
+                    text-align: center;
+                }
+
+                tr:nth-child(even) {
+                    background-color: hsl(from var(--accent-color) h s 90);
+                }
+            }
+        }
+
+        .item-img {
+            width: 50%;
+            height: min-content;
+            float: left;
+            overflow: hidden;
+            margin-right: var(--base-padding);
+
+            img {
+                margin: 0;
+                padding: 0;
+                width: 100%;
+                transition: 0.7s;
+                display: block;
+            }
+        }
+
+        &:hover {
+            img {
+                scale: 1.1;
+            }
+        }
+    }
+}
+
+footer {
+    width: 100%;
+    padding: var(--base-padding);
+    background-color: hsl(from var(--accent-color) h s calc(l - 10));
+    color: var(--bg);
+}
+
+@media (width <= 1280px) {
+    .food-bg {
+        article {
+            /* background-color: hsl(from var(--accent-color) h s l / 0.9); */
+            background-color: hsl(from var(--accent-color) h s l / 0.4);
+            backdrop-filter: blur(2px);
+            border-radius: 0.6rem;
+            padding: var(--base-padding) calc(var(--base-padding) * 2);
+            translate: -50% -50%;
+        }
+    }
+
+    .items-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (width <= 700px) {
+    .items-list {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+@media (width <= 500px) {
+    html {
+        font-size: 10px;
+    }
+
+    .food-bg {
+        height: 50vh;
+    }
+}
