@@ -5,8 +5,15 @@ export interface Size {
     large?: SizeItem;
 }
 
-export type Allergens = "Laktoza" | "Gluten" | "Orzechy" | "Ryby" | "Soja" | "Seler" | "Gorczyca" | "Sezam" | "Mięczaki";
+export type Allergens = "Laktoza" | "Gluten" | "Orzechy" | "Ryby" | "Soja" | "Seler" | "Gorczyca" | "Sezam" | "Mięczaki" | "Jaja";
 export type MenuItemType = "Dania główne" | "Zestawy dziecięce" | "Desery" | "Przystawki" | "Pizza" | "Makaron" | "Zupy" | "Kebab" | "Ryby" | "Dodatki" | "Napoje bezalkoholowe" | "Napoje alkoholowe";
+
+export const AllergensArr: Allergens[] = [
+    "Laktoza", "Gluten", "Orzechy", "Ryby", "Soja", "Seler", "Gorczyca", "Sezam", "Mięczaki", "Jaja"
+];
+export const MenuItemTypeArr: MenuItemType[] = [
+    "Dania główne", "Zestawy dziecięce", "Desery", "Przystawki", "Pizza", "Makaron", "Zupy", "Kebab", "Ryby", "Dodatki", "Napoje bezalkoholowe", "Napoje alkoholowe"
+]
 
 export interface MenuItem {
     name: string;

@@ -23,46 +23,50 @@
         </article>
     </section>
     <main>
+        <h1 class="title menu-title text-center">Menu</h1>
+        <input id="search" type="text" placeholder="Wyszukaj...">
         <section class="options">
-            <div class="option">
-                <p>---Kategorie---</p>
-                <p class="option checked">Kebab</p>
+            <div id="category" class="option">
+                ---Kategorie---
             </div>
-            <div class="option">
-                <p>---Składniki---</p>
+            <div id="ingredients" class="option">
+                ---Składniki---
             </div>
-            <div class="option">
-                <p>---Alergeny---</p>
+            <div id="allergens" class="option">
+                ---Alergeny---
             </div>
         </section>
         <section class="items-list">
-            <div class="card">
-                <div class="item-img">
-                    <img src="./imgs/kebab_tortilla.png" alt="kebab tortilla">
-                </div>
-                <small class="category">Kategoria >> Kebab</small>
-                <h2>Tortilla</h2>
-                <h5>Składniki</h5>
-                <p>Tortilla pszenna, Kapusta pekińska, Kapusta czerwona, Pomidor, Ogórek, Śmietana/Jogurt (sos)</p>
-                <p><small class="list">Alergeny: Gluten, Laktoza</small></p>
-                <div class="additional-info">
-                    <h5>Dodatkowe informacje:</h5>
-                    <p>Do wyboru - Mięso: wołowe, drobiowe. Sos: łagodny, ostry, mieszany, czosnkowy, koperkowy</p>
-                </div>
-                <br>
-                <div class="price">
-                    <table>
-                        <tr><th></th><th>Mały</th><th>Duży</th></tr>
-                        <tr><th>Cena</th><td>13.99zł</td><td>18.99zł</td></tr>
-                        <tr><th>Waga</th><td>317g</td><td>478g</td></tr>
-                    </table>
-                    <button class="btn">Do koszyka</button>
-                </div>
-            </div>
+            
         </section>
     </main>
     <footer>
         <p>Copyright &copy; by Cyprian Moczała</p>
     </footer>
+
+    <!-- Modals -->
+    <section id="category-modal" class="modal">
+        <div class="body">
+            <h1><span class="close-modals">&lt;</span> Wybierz kategorię...</h1>
+            <div class="options"></div>
+        </div>
+        <div class="bg"></div>
+    </section>
+
+    <section id="ingredients-modal" class="modal">
+        <div class="body">
+            <h1><span class="close-modals">&lt;</span> Wybierz pożądane składniki...</h1>
+            <div class="options"></div>
+        </div>
+        <div class="bg"></div>
+    </section>
+
+    <section id="allergy-modal" class="modal">
+        <div class="body">
+            <h1><span class="close-modals">&lt;</span> Wybierz alergen...</h1>
+            <div class="options"></div>
+        </div>
+        <div class="bg"></div>
+    </section>
 </body>
 </html>
