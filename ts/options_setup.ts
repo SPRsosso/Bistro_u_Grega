@@ -146,7 +146,7 @@ export function initializeOptions() {
         const target = event.target as HTMLParagraphElement;
         if (target !== ingredientsEl) {
             const type = target.innerHTML;
-            allergenFilter.delete(type as Allergens);
+            ingredientsFilter.delete(type);
 
             removeOption(ingredientsEl, type);
             const options = ingredientsModalOptions.querySelectorAll<HTMLDivElement>(".option");
