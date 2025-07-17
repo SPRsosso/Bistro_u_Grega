@@ -15,7 +15,7 @@ export let ingredientsFilter: Set<string> = new Set();
 export let searchText: string = "";
 
 const modals = document.querySelectorAll<HTMLDivElement>(".modal");
-const closeModals = document.querySelectorAll<HTMLSpanElement>(".close-modals");
+const closeModals = document.querySelectorAll<HTMLSpanElement>(".close-modals, .bg");
 
 const categoryModal = document.querySelector<HTMLDivElement>("#category-modal")!;
 const ingredientsModal = document.querySelector<HTMLDivElement>("#ingredients-modal")!;

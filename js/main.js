@@ -15,7 +15,7 @@ function showItems() {
                 <h2>${item.name}</h2>
                 <h5>Składniki</h5>
                 <p>${item.ingredients.join(", ")}</p>
-                <p><small class="list">Alergeny: ${item.allergens.join(", ")}</small></p>
+                ${item.allergens.length > 0 ? `<p><small class="list">Alergeny: ${item.allergens.join(", ")}</small></p>` : ""}
                 ${item.additionalInfo ? `
                     <div class="additional-info">
                         <h5>Dodatkowe informacje:</h5>
@@ -46,13 +46,16 @@ export function filter() {
             hasAllergen = allergenFilter.has(allergen);
         });
         let hasIngredients = false;
+        const itemIngredients = new Set();
         item.ingredients.forEach(ingredient => {
             if (hasIngredients)
                 return;
-            hasIngredients = ingredientsFilter.has(ingredient);
-            if (ingredientsFilter.size === 0)
-                hasIngredients = true;
+            if (ingredientsFilter.has(ingredient))
+                itemIngredients.add(ingredient);
         });
+        hasIngredients = itemIngredients.size === ingredientsFilter.size;
+        if (ingredientsFilter.size === 0)
+            hasIngredients = true;
         let containsSearchedText = item.name.toLowerCase().includes(searchText.toLowerCase())
             || item.type.toLowerCase().includes(searchText.toLowerCase())
             || item.additionalInfo?.toLowerCase().includes(searchText.toLowerCase());
